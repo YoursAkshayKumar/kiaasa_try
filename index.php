@@ -54,7 +54,7 @@ ini_set('memory_limit', '-1');
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'production');
 
 
 
@@ -85,7 +85,7 @@ switch (ENVIRONMENT)
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
 		}
-		define("BASEURL", "https://kiaasa.rdaacademy.com/");
+		define("BASEURL", "https://kiaasa.revopions.com/");
 	break;
 
 	default:

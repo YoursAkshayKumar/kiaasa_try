@@ -33,7 +33,7 @@ class Product extends MY_Controller{
 
         $products = $this->db->get()->result_array();
 
-        var_dump($products); exit;
+        // var_dump($products); exit;
 
         foreach($products as $key => $p){
             $products[$key]['image_name'] = BASEURL.'upload/'.$p['image_name'];
