@@ -22,7 +22,7 @@ $route['getcategory'] = 'api/category/category/getcategory';
 
 /************************************************************/
 //Products
-$route['getallproduct'] = 'api/products/product/getAllProducts';
+$route['getallproduct'] = 'api/products/Product/getAllProducts';
 
 /************************************************************/
 //Store Api
