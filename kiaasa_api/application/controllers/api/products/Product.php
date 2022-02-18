@@ -11,6 +11,26 @@ class Product extends MY_Controller{
             'p.id,
              p.product_name,
              p.product_barcode,
+              p.product_sku,
+             p.vendor_product_sku,
+             p.category_id,
+             p.subcategory_id,
+             p.product_description,
+             p.base_price,
+             p.sale_price,
+             p.size_id,
+             p.color_id,
+             p.push_demand_booked,
+             p.sale_category,
+             p.story_id,
+             p.season_id,
+             p.product_type,
+             p.hsn_code,
+             p.user_id,
+             p.gst_inclusive,
+             p.custom_product,
+             p.arnon_product,
+             p.supplier_name,
          
              p.product_rate_updated,
              p.status,
@@ -58,25 +78,7 @@ class Product extends MY_Controller{
 
    
 
-        // $this->db->where('c.product_count >', 0);
-        // $this->db->join('images as i', 'c.thumbnail = i.image_id');
-        // $category = $this->db->get()->result_array();
-    
-        // foreach($category as $key => $c){
-        //     $category[$key]['actual'] = BASEURL.'upload/'.$c['actual'];
-        //     $category[$key]['thumbnail'] = BASEURL.'upload/'.$c['thumbnail'];
-        //     $this->db->select('sc.sub_category_id, sc.sub_category_name, sc.thumbnail, sc.product_count, i.actual, i.thumbnail');
-        //     $this->db->from('sub_category as sc');
-        //     $this->db->where('sc.category_id', $c['category_id']);
-        //     $this->db->where('sc.product_count >', 0);
-        //     $this->db->join('images as i', 'sc.thumbnail = i.image_id');
-        //     $subCategory = $this->db->get()->result_array();
-    
-    
-        //     $category[$key]['sub_category'] = $subCategory;
-    
-            
-        // }
+       
     
         echo json_encode($products);
         exit();
