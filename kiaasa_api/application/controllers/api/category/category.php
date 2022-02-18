@@ -29,8 +29,13 @@ class Category extends MY_Controller{
 
 			
 		// }
-
-        echo json_encode($category);
+		if (empty($category)) {
+		    $response = ['status' => 200, 'message' => 'success','description' =>'There is no category'];
+		}else{
+		     $response = ['status' => 200, 'message' => 'success','description' =>'Category fetch successfully.', 'data'=>$category];
+		}
+	
+        echo json_encode($response);
         exit();
 	}
 
