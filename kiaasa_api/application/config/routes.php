@@ -34,7 +34,7 @@ $route['v1/delete-image'] = 'backend/media/deleteimage';
 
 
 $route['getstate'] = 'api/states/states/getState';
-$route['v1/updatebrand/(:any)'] = 'api/backend/brand/updatebrand/$1';
+$route['v1/updatebrand/(:any)'] = 'api/backend/brand/';
 $route['v1/delete-image'] = 'backend/media/deleteimage';
 
 
