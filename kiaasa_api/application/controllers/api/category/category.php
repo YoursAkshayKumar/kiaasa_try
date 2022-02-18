@@ -9,7 +9,7 @@ class Category extends MY_Controller{
 	public function getcategory(){
         $this->db->select('c.id, c.name, c.product_style, c.parent_id, c.type_id, c.status, c.is_deleted, c.created_at');
 		$this->db->from('product_category_master as c');
-		$this->db->where('c.is_deleted =', 0);
+		// $this->db->where('c.is_deleted =', 0);
 		
 		$category = $this->db->get()->result_array();
 
