@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // WEBSITE
-$route['default_controller'] = 'api/category/category/';
+$route['default_controller'] = 'api/category/category';
 
 
 

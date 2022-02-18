@@ -76,11 +76,15 @@ class Product extends MY_Controller{
 
         }
 
-   
 
-       
-    
-        echo json_encode($products);
+        if (empty($products)) {
+        $response = ['status' => 200, 'message' => 'success','description' =>'There is no product'];
+        }else{
+        $response = ['status' => 200, 'message' => 'success','description' =>'Product fetch successfully.', 'data'=>$products];
+        }
+
+ 
+        echo json_encode($response);
         exit();
     }
 
