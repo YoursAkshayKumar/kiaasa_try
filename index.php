@@ -85,7 +85,7 @@ switch (ENVIRONMENT)
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
 		}
-		define("BASEURL", "https://ekiaasa.revopions.com");
+		define("BASEURL", "https://ekiaasa.revopions.com/");
 	break;
 
 	default:

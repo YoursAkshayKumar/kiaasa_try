@@ -15,16 +15,14 @@ class Product extends MY_Controller{
              p.product_rate_updated,
              p.status,
              p.is_deleted,
-             p.created_at,
-             i.image_name,
-             i.image_title,
-             i.image_type
+             p.created_at
+            
             '
         );
 
         $this->db->from('pos_product_master as p');
         // $this->db->where('p.is_deleted =', 0);
-        $this->db->join('pos_product_images as i', 'p.id = i.product_id');
+        // $this->db->join('pos_product_images as i', 'p.id = i.product_id');
      
 
         // $this->db->offset(0);
@@ -33,15 +31,32 @@ class Product extends MY_Controller{
 
         $products = $this->db->get()->result_array();
 
-        // var_dump($products); exit;
-
+        
         foreach($products as $key => $p){
-            $products[$key]['image_name'] = BASEURL.'upload/'.$p['image_name'];
-            $products[$key]['image_title'] = BASEURL.'upload/'.$p['image_title'];
-            $products[$key]['image_type'] = $p['image_type'];
+            // var_dump($p); exit;
+            // $products[$key]['image_name'] = BASEURL.'upload/'.$p['image_name'];
+            // $products[$key]['image_title'] = BASEURL.'upload/'.$p['image_title'];
+            // $products[$key]['image_type'] = $p['image_type'];
             // $products[$key]['isAddedToCart'] = false;
             // $products[$key]['cartQuantity'] = null;
+
+            $this->db->select(
+                'i.image_name,
+                 i.image_title,
+                 i.image_type 
+                '
+            );
+            
+        $this->db->from('pos_product_images as i');
+        $this->db->where('i.product_id =', $p["id"]);
+
+        $image = $this->db->get()->result_array();
+
+        $products[$key]['image'] =  $image;
+
         }
+
+   
 
         // $this->db->where('c.product_count >', 0);
         // $this->db->join('images as i', 'c.thumbnail = i.image_id');
@@ -91,6 +106,9 @@ class Product extends MY_Controller{
             //  p.custom_product,
             //  p.arnon_product,
             //  p.supplier_name,
+            // i.image_name,
+            // i.image_title,
+            // i.image_type
 
 
 
